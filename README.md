@@ -16,36 +16,6 @@ This project implements Huffman Coding for text compression and decompression. H
 - File handling
 - Huffman Coding Algorithm
 
-## Algorithm
-1. Calculate the frequency of each character in the input text.
-2. Initialize a priority queue (min-heap) with nodes containing characters and their frequencies.
-3. Construct a binary tree using the priority queue:
-     - Extract two nodes with the lowest frequencies from the priority queue.
-     - Create a new node with these two nodes as children, and the sum of their frequencies as its frequency.
-     - Insert the new node back into the priority queue.
-     - Repeat until only one node remains in the priority queue, forming the Huffman tree.
-4. Traverse the Huffman tree to generate binary codes for each character:
-     - Start at the root of the tree.
-     - Traverse left for '0' and right for '1'.
-     - Record the binary code for each character encountered along the way.
-5. Replace each character in the input text with its corresponding Huffman code.
-6. Concatenate the binary codes to form the compressed text.
-7. Add padding to the compressed text to ensure the length is a multiple of 8 (if needed).
-8. Record the number of padding bits added.
-9. Output the compressed text along with any padding information.
-10. Read the compressed text and padding information.
-11. Remove the padding bits to restore the original length.
-12. Traverse the Huffman tree using the binary codes to decode the compressed text back to its original form.
-
-
-## Features
-
-- **Compression**: Compresses text files using Huffman Coding.
-- **Decompression**: Decompresses files back to their original text.
-- **Binary Tree Management**: Constructs and traverses binary trees.
-- **Min-Heap Implementation**: Efficient priority queue operations.
-- **Custom Queue**: Supports queue operations for Huffman tree construction.
-
 ## Project Structure
 
 ```
@@ -69,7 +39,7 @@ huffman/
 To use this project, clone the repository and install the required dependencies.
 
 ```bash
-git clone https://github.com/your-username/huffman-coding.git
+git clone https://github.com/rohanmittal1163/Huffman-Compressor-Decompressor.git
 cd huffman-coding
 ```
 
@@ -111,7 +81,36 @@ print(f"File compressed to: {compressed_path}")
 decompressed_path = huffman.decompression(compressed_path)
 print(f"File decompressed to: {decompressed_path}")
 ```
+## Algorithm
+1. Calculate the frequency of each character in the input text.
+2. Initialize a priority queue (min-heap) with nodes containing characters and their frequencies.
+3. Construct a binary tree using the priority queue:
+     - Extract two nodes with the lowest frequencies from the priority queue.
+     - Create a new node with these two nodes as children, and the sum of their frequencies as its frequency.
+     - Insert the new node back into the priority queue.
+     - Repeat until only one node remains in the priority queue, forming the Huffman tree.
+4. Traverse the Huffman tree to generate binary codes for each character:
+     - Start at the root of the tree.
+     - Traverse left for '0' and right for '1'.
+     - Record the binary code for each character encountered along the way.
+5. Replace each character in the input text with its corresponding Huffman code.
+6. Concatenate the binary codes to form the compressed text.
+7. Add padding to the compressed text to ensure the length is a multiple of 8 (if needed).
+8. Record the number of padding bits added.
+9. Output the compressed text along with any padding information.
+10. Read the compressed text and padding information.
+11. Remove the padding bits to restore the original length.
+12. Traverse the Huffman tree using the binary codes to decode the compressed text back to its original form.
 
+
+## Features
+
+- **Compression**: Compresses text files using Huffman Coding.
+- **Decompression**: Decompresses files back to their original text.
+- **Binary Tree Management**: Constructs and traverses binary trees.
+- **Min-Heap Implementation**: Efficient priority queue operations.
+- **Custom Queue**: Supports queue operations for Huffman tree construction.
+  
 ##  Contribute
 This project is open source and we are happy to receive contributions. If you would like to contribute, please follow these steps:
 
